@@ -1,5 +1,6 @@
+import Home from "components/pages/Home";
 import type { NextPage } from "next";
 
-const Home: NextPage = () => <div className="font-bold">Hello World!</div>;
+const HomePage: NextPage = () => <Home />;
 
-export default Home;
+export default HomePage;
