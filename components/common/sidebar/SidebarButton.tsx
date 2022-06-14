@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactNode, useState } from "react";
+import { ReactNode, useCallback, useState } from "react";
 
 type Props = {
   path: string;
@@ -11,8 +11,13 @@ type Props = {
 
 const SidebarButton = ({ path, icon, children }: Props) => {
   const router = useRouter();
-  const isThisPath = (pathToCheck: string) => pathToCheck === path;
+  const isThisPath = useCallback(
+    (pathToCheck: string) => pathToCheck === path,
+    [path]
+  );
+
   const [selected, setSelected] = useState(isThisPath(router.route));
+
   router.events.on("routeChangeComplete", (newPath) => {
     setSelected(isThisPath(newPath));
   });
