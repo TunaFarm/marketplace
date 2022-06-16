@@ -13,10 +13,12 @@ const UserSection = () => {
     <div>
       {isLoading && <span>Loading...</span>}
       {error && <span>Error</span>}
+      {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
       {!isLoading && !user && <a href="/api/auth/login">Login</a>}
       {user && (
         <div>
           <span>Welcome, {user.name}</span>
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a href="/api/auth/logout">Logout</a>
         </div>
       )}
