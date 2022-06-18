@@ -28,7 +28,7 @@ const Dropdown = ({ data, label, onChange }: IPropsDropdown) => {
 
 
     return (
-        <div className="z-50" ref={ref}>
+        <div className="z-10" ref={ref}>
             <div className="relative inline-block text-left">
                 <button onClick={openMenu} type="button" className="inline-flex justify-between w-full px-4 py-2 text-sm font-medium text-gray-300 rounded-md shadow-sm bg-slate-800 focus:outline-none min-w-[200px]" id="menu-button">
                     {selected}
