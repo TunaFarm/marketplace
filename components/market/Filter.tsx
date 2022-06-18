@@ -15,7 +15,7 @@ const filterBehaviors = [
 ]
 
 const Filter = () => 
-    <div className="min-w-[240px] h-[calc(100vh-60px)] fixed top-[60px] left-[90px] bg-[#1d232a]">
+    <div className="scroll-custom min-w-[240px] h-[calc(100vh-60px)] fixed top-[60px] left-[90px] bg-[#1d232a] overflow-auto">
         <div className="w-full h-full">
             <p className="px-5 py-3 text-2xl font-medium text-gray-500">SHOP</p>
             <div className="mt-3">
