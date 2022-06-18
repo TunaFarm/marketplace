@@ -74,12 +74,15 @@ const data: Card[] = [
 const Market = () =>
     <div className="bg-[#1b2026] pb-20">
         <Banner />
-        <div className="py-20 text-center text-gray-200">
-            <h2 className="mb-3 text-5xl font-bold">Welcome to the NFT Marketplace</h2>
-            <p >Here you can search and buy create ASSETS with SAND to incorporate them into your LAND</p>
+        <div className="px-5 py-20 text-left text-gray-200 lg:text-center">
+            <h2 className="mb-3 text-3xl font-bold lg:text-5xl">Welcome to the NFT Marketplace</h2>
+            <p className="text-sm lg:text-md">Here you can search and buy create ASSETS with SAND to incorporate them into your LAND</p>
         </div>
         <div className="container px-5 mx-auto">
             <Shop data={data} title="NFTs For Sale" />
+        </div>
+        <div className="container px-5 mx-auto">
+            <Shop data={data} title="NFTs Entities" />
         </div>
     </div>;
 
