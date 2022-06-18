@@ -1,4 +1,5 @@
 import  * as React from "react";
+import useOutsideAlerter from '../../../hooks/useOutsideAlerter';
 
 interface IPropsDropdown {
     data: any[];
@@ -9,7 +10,12 @@ interface IPropsDropdown {
 const Dropdown = ({data, label, onChange} : IPropsDropdown) => {
     const [open, setOpen] = React.useState<boolean>(false);
     const [selected, setSelected] = React.useState<string>(label);
+    const ref = React.useRef<any>(null);
     
+    useOutsideAlerter(ref, () => {
+        setOpen(false);
+    })
+
     const openMenu = React.useCallback(() => {
         setOpen((isOpem: boolean) => !isOpem);
     }, [setOpen])
@@ -20,8 +26,9 @@ const Dropdown = ({data, label, onChange} : IPropsDropdown) => {
         setOpen((isOpem: boolean) => !isOpem);
     }, [setSelected, setOpen, onChange])
 
+    
     return (
-        <div className="z-50">
+        <div className="z-50" ref={ref}>
             <div className="relative inline-block text-left">
                 <button onClick={openMenu} type="button" className="inline-flex justify-between w-full px-4 py-2 text-sm font-medium text-gray-300 rounded-md shadow-sm bg-slate-800 focus:outline-none min-w-[200px]" id="menu-button">
                     {selected}
