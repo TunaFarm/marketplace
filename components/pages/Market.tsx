@@ -1,6 +1,6 @@
-import Banner from "@/components/market/Banner";
-import Shop from "@/components/market/Shop";
-import {Card} from "@/models/Card";
+import Banner from "components/market/Banner";
+import Shop from "components/market/Shop";
+import {Card} from "models/Card";
 
 const data: Card[] = [
     {

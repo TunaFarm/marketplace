@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react';
-import { Card as ICard } from "@/models/Card";
+import { Card as ICard } from "models/Card";
 
 export interface ICardProps {
     data: ICard;
