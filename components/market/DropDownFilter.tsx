@@ -11,7 +11,7 @@ const DropDownFilter = ({ label, data }: IDropDownFilter) => {
 
     const openMenu = React.useCallback(() => {
         setOpen((isOpem: boolean) => !isOpem);
-    }, [setOpen])
+    }, [])
 
     const handleSelected =React.useCallback( (value: any) => {
         // eslint-disable-next-line no-console
@@ -31,13 +31,13 @@ const DropDownFilter = ({ label, data }: IDropDownFilter) => {
                     </svg>
                 }
             </button>
-            {open && <div className="flex flex-col w-full px-4">
+            <div className={`${open ? "": "hidden"} flex flex-col w-full px-4`}>
                 {data.map((item: any) =>
                     <div key={item.value} className="mb-3 max-w-[180px]">
                         <ItemCheckboxFIlter  label={item.label} value={item.value} onChange={handleSelected} />
                     </div>
                 )}
-            </div>}
+            </div>
         </div>
     );
 };

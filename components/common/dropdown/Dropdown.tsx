@@ -18,13 +18,13 @@ const Dropdown = ({ data, label, onChange }: IPropsDropdown) => {
 
     const openMenu = React.useCallback(() => {
         setOpen((isOpem: boolean) => !isOpem);
-    }, [setOpen])
+    }, [])
 
     const onClick = React.useCallback((value: any) => {
         onChange(value);
         setSelected(() => value.label);
         setOpen((isOpem: boolean) => !isOpem);
-    }, [setSelected, setOpen, onChange])
+    }, [onChange])
 
 
     return (

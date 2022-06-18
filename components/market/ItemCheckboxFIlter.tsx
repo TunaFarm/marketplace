@@ -13,7 +13,7 @@ const ItemCheckboxFIlter = ({ label, value, onChange }: IPropsItemCheckboxFIlter
     const onClick = React.useCallback(() => {
         setChecked((isChecked) => !isChecked);
         onChange(value);
-    }, [setChecked, onChange, value])
+    }, [onChange, value])
 
     return (
         <div className="flex items-center gap-3">
