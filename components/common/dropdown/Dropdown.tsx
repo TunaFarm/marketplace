@@ -15,8 +15,8 @@ const Dropdown = ({data, label, onChange} : IPropsDropdown) => {
     }, [setOpen])
 
     const onClick = React.useCallback((value: any) => {
-        setSelected(() => value.label);
         onChange(value);
+        setSelected(() => value.label);
         setOpen((isOpem: boolean) => !isOpem);
     }, [setSelected, setOpen, onChange])
 
