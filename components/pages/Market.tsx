@@ -75,10 +75,10 @@ const Market = () =>
     <div className="bg-[#1b2026] pb-20">
         <Banner />
         <div className="py-20 text-center text-gray-200">
-            <h2 className="text-5xl font-bold mb-3">Welcome to the NFT Marketplace</h2>
+            <h2 className="mb-3 text-5xl font-bold">Welcome to the NFT Marketplace</h2>
             <p >Here you can search and buy create ASSETS with SAND to incorporate them into your LAND</p>
         </div>
-        <div className="container mx-auto">
+        <div className="container px-5 mx-auto">
             <Shop data={data} title="NFTs For Sale" />
         </div>
     </div>;
