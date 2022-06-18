@@ -5,7 +5,7 @@ import { ReactNode, useCallback, useEffect, useState } from "react";
 
 type Props = {
   path: string;
-  icon: string;
+  icon: ReactNode;
   children: ReactNode;
 };
 
@@ -26,13 +26,13 @@ const SidebarButton = ({ path, icon, children }: Props) => {
 
   return (
     <Link href={path}>
-      <a className="p-10 relative">
+      <a className="relative p-10">
         {selected && (
-          <div className="h-full w-full absolute top-0 left-0 bg-gray-500 rounded-xl" />
+          <div className="absolute top-0 left-0 w-full h-full bg-gray-700 rounded-xl" />
         )}
-        <div className="absolute top-0 left-0 h-full w-full flex flex-col justify-center items-center gap-1">
-          <span className="text-xl">{icon}</span>
-          <span className="text-white uppercase text-sm font-bold tracking-wide">
+        <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full gap-1">
+          <span className="text-xl w-[40px] h-[40px] rounded-full border-4 border-transparent hover:border-white duration-150 ease-in">{icon}</span>
+          <span className={`${selected ? 'text-gray-200' : 'text-gray-500'} text-xs font-bold tracking-wide uppercase`}>
             {children}
           </span>
         </div>

@@ -1,6 +1,7 @@
 import Banner from "components/market/Banner";
+import Filter from "components/market/Filter";
 import Shop from "components/market/Shop";
-import {Card} from "models/Card";
+import { Card } from "models/Card";
 
 const data: Card[] = [
     {
@@ -73,16 +74,23 @@ const data: Card[] = [
 
 const Market = () =>
     <div className="bg-[#1b2026] pb-20">
-        <Banner />
-        <div className="px-5 py-20 text-left text-gray-200 lg:text-center">
-            <h2 className="mb-3 text-3xl font-bold lg:text-5xl">Welcome to the NFT Marketplace</h2>
-            <p className="text-sm lg:text-md">Here you can search and buy create ASSETS with SAND to incorporate them into your LAND</p>
-        </div>
-        <div className="container px-5 mx-auto">
-            <Shop data={data} title="NFTs For Sale" />
-        </div>
-        <div className="container px-5 mx-auto">
-            <Shop data={data} title="NFTs Entities" />
+        <div className="flex w-full">
+            <div className="min-w-[240px]">
+                <Filter/>
+            </div>
+            <div className="flex-1">
+                <Banner />
+                <div className="px-5 py-20 text-left text-gray-200 lg:text-center">
+                    <h2 className="mb-3 text-3xl font-bold lg:text-5xl">Welcome to the NFT Marketplace</h2>
+                    <p className="text-sm lg:text-md">Here you can search and buy create ASSETS with SAND to incorporate them into your LAND</p>
+                </div>
+                <div className="container px-5 mx-auto">
+                    <Shop data={data} title="NFTs For Sale" />
+                </div>
+                <div className="container px-5 mx-auto">
+                    <Shop data={data} title="NFTs Entities" />
+                </div>
+            </div>
         </div>
     </div>;
 

@@ -10,7 +10,9 @@ const Layout = ({ children }: Props) => (
   <div className="flex flex-col w-full h-screen bg-gray-400">
     <TopBar />
     <div className="flex flex-1">
-      <Sidebar />
+      <div className="w-[90px]">
+        <Sidebar />
+      </div>
       <div className="flex-1">{children}</div>
     </div>
   </div>

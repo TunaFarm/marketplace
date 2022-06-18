@@ -10,7 +10,7 @@ const UserSection = () => {
   if (!mounted) return null;
 
   return (
-    <div>
+    <div className="text-white">
       {isLoading && <span>Loading...</span>}
       {error && <span>Error</span>}
       {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
