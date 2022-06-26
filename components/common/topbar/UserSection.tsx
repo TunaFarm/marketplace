@@ -1,8 +1,9 @@
-import { useUser } from "@auth0/nextjs-auth0";
+import { useAuth } from "components/context/AuthContext";
 import { useEffect, useState } from "react";
 
 const UserSection = () => {
-  const { user, error, isLoading } = useUser();
+  // const { user, error, isLoading } = useUser();
+  const { user, isLoading, login } = useAuth();
 
   // If statically generated, don't render anything.
   const [mounted, setMounted] = useState(false);
@@ -12,10 +13,14 @@ const UserSection = () => {
   return (
     <div className="text-white">
       {isLoading && <span>Loading...</span>}
-      {error && <span>Error</span>}
-      {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-      {!isLoading && !user && <a href="/api/auth/login">Login</a>}
-      {user && (
+      {/* {error && <span>Error</span>} */}
+      {/* {!isLoading && !user && <a href="/api/auth/login">Login</a>} */}
+      {!isLoading && !user && (
+        <button type="button" onClick={() => login()}>
+          Login
+        </button>
+      )}
+      {!isLoading && user && (
         <div>
           <span>Welcome, {user.name}</span>
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
