@@ -24,6 +24,8 @@ const SidebarButton = ({ path, icon, children }: Props) => {
     });
   }, [isThisPath, router.events]);
 
+
+
   return (
     <Link href={path}>
       <a className="relative p-10">

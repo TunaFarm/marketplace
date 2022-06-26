@@ -76,7 +76,8 @@ const Market = () =>
     <div className="bg-[#1b2026] pb-20">
         <div className="flex w-full">
             <div className="min-w-[240px] hidden md:block">
-                <Filter/>
+                <Filter />
+
             </div>
             <div className="flex-1">
                 <Banner />

@@ -41,7 +41,7 @@ const Dropdown = ({ data, label, onChange }: IPropsDropdown) => {
                         </svg>
                     }
                 </button>
-                <div className={`${open ? "" : "hidden"} absolute right-0 w-56 mt-1 origin-top-right bg-slate-800 rounded-md shadow-lg ring-opacity-5 focus:outline-none overflow-hidden`} role="menu">
+                <div className={`${open ? "" : "hidden"} absolute right-0 w-full mt-1 origin-top-right bg-slate-800 rounded-md shadow-lg ring-opacity-5 focus:outline-none overflow-hidden`} role="menu">
                     <div role="none">
                         {data.map((item: any, index: Number) => <div key={item?.value} onClick={() => onClick(item)} aria-hidden="true" className="block px-4 py-2 text-sm text-gray-200 cursor-pointer hover:bg-blue-500" role="menuitem" id={`menu-item-${index}`}>{item?.label}</div>)}
                     </div>
