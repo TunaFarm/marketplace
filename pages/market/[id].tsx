@@ -1,26 +1,26 @@
-import CardDetail from "components/pages/CardDetail";
 import type { NextPage, GetStaticPaths, GetStaticProps } from "next";
+import CardDetail from "components/pages/CardDetail";
+import { Card } from "../../models/Card";
 
-export type CardDetailType = {
-    id: string;
-    title: string;
-}
+
 
 type Props = {
-    cardDetail: CardDetailType;
+    cardDetail: Card;
 }
-
-const CardDetailPage: NextPage<Props> = ({ cardDetail }) => <CardDetail cardDetail={cardDetail} />;
 
 type Params = {
     id: string;
 }
 
+const CardDetailPage: NextPage<Card> = (cardDetail: Card) => <CardDetail cardDetail={cardDetail} />;
+
+
+
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
     const exampleAPIResponse = [1, 2, 3, 6, 7, 10];
 
     const paths = exampleAPIResponse.map((id) => ({
-        params: { id: id + "" },
+        params: { id: id.toString() },
     }));
 
     return { paths, fallback: false };
@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = ({ params }) => {
 
     const { id } = params;
     // TODO: fetch data from API with this id
-    const data = { id, title: "Example Title" };
+    const data = { id, name: "Example Title", price: 1000, image: "Test" };
 
     return {
         props: {

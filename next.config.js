@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["api.sandbox.game"],
+    domains: ["placekitten.com"],
   },
 };
 
