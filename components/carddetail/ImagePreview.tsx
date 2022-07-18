@@ -35,24 +35,24 @@ const ImagePreview = ({ doPayment }: any) => {
   }, []);
 
   return (
-    <div className="w-[400px] h-full">
-      <div className=" fixed">
+    <div className="flex justify-center w-1/5 m-2.5">
+      <div className="fixed w-fit">
         <p className="text-[#a0a4a7] ">{"<"} Back</p>
-        <div className="flex flex-col justify-between rounded-md border-2 border-blue-600 w-[400px] h-[500px] mt-4">
-          <div className="pt-3 pl-3">
+        <div className="flex-col justify-between rounded-md border-2 border-blue-600 h-[30rem] mt-4">
+          <div className="p-3">
             <Dropdown data={dropdown} label="3D view" onChange={handleChange} />
           </div>
-          <div className="flex items-center h-full relative">
+          <div className="flex items-center w-full h-96 relative">
             <Image
               src="https://placekitten.com/400/300"
               alt="Name"
-              className="object-contain w-[400px] h-[300px]"
+              className="object-contain "
               layout="fill"
             />
             {/* <Image src={"https://api.sandbox.game/assets/public/95aa86ee-8e0f-47ec-bcdd-30851c73410b/preview"} width={200} height={250} /> */}
           </div>
         </div>
-        <div className="h-[170px] pt-[5px] pb-[5px]">
+        <div className="h-[10rem] py-1.5">
           <div className="flex justify-between">
             <div className="text-[#d2d3d4]">CURRENT PRICE</div>
             <div>
@@ -75,14 +75,14 @@ const ImagePreview = ({ doPayment }: any) => {
               </div>
             </div>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between my-3">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a href="#" className="text-[#00adef]">
               @Owner
             </a>
             <p className="text-white">4/5</p>
           </div>
-          <div className="flex justify-between mt-3">
+          <div className="flex justify-between">
             <button
               className="border border-white bg-black rounded-3xl w-48 py-2.5 font-bold hover:bg-[#0055ff] hover:border-[#0055ff] hover:cursor-pointer"
               type="button"

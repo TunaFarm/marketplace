@@ -81,7 +81,7 @@ const CardInformation = () => {
     },
   ];
   return (
-    <div className="w-[681px] m-5">
+    <div className="w-2/6 m-5">
       <div className="flex flex-col justify-between h-36 p-2">
         <h1 className="text-white text-2xl font-bold">Atari Yacht</h1>
         <div className="flex items-center text-[#505861]">

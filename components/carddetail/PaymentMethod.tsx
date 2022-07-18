@@ -1,20 +1,24 @@
 import Image from "next/image";
+import Link from "next/link";
 // eslint-disable-next-line react/prop-types
 const walletTypes = [
   {
     icon: "https://placekitten.com/400/300",
     name: "Metamask",
     suggestion: "Recommended",
+    link: "https://metamask.io/",
     port: "web3",
   },
   {
     icon: "https://placekitten.com/400/300",
     name: "Bitski",
+    link: "https://www.bitski.com/",
     port: "web3",
   },
   {
     icon: "https://placekitten.com/400/300",
     name: "Coinbase",
+    link: "https://www.coinbase.com/fr/",
     port: "web3",
   },
 ];
@@ -62,7 +66,14 @@ const PaymentMethod = ({ doPayment }: any) => (
                   layout="fill"
                 />
               </div>
-              <div className="ml-2.5 w-fit ">{item.name}</div>
+              <a
+                href={item.link}
+                target="_blank"
+                className="ml-2.5 w-fit "
+                rel="noreferrer"
+              >
+                {item.name}
+              </a>
               <div className="px-1 font-thin w-fit">
                 {item?.suggestion ? `(${item.suggestion})` : ""}
               </div>

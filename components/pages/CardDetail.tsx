@@ -16,19 +16,22 @@ const CardDetail = () => {
   };
 
   return (
-    <div className="bg-[#1b2026] h-full w-full ">
-      <div className="pt-24 h-full w-auto">
-        <div className={show ? "hidden" : "flex justify-center scroll-smooth"}>
-          <ImagePreview doPayment={doPayment} />
-          <CardInformation />
-        </div>
-        <div
+    <div className="bg-[#1b2026] h-full w-full pt-24">
+      <div
+        className={show ? "hidden" : "flex justify-center scroll-smooth h-full"}
+      >
+        <ImagePreview doPayment={doPayment} />
+        <CardInformation />
+      </div>
+      <div
+        className={show ? "flex justify-center items-center h-full" : "hidden"}
+      >
+        <PaymentMethod
+          doPayment={doPayment}
           className={
             show ? "flex justify-center items-center h-full" : "hidden"
           }
-        >
-          <PaymentMethod doPayment={doPayment} />
-        </div>
+        />
       </div>
     </div>
   );
