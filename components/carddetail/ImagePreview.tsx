@@ -2,7 +2,7 @@ import React from "react";
 import Dropdown from "components/common/dropdown/Dropdown";
 import Image from "next/image";
 
-const ImagePreview = () => {
+const ImagePreview = ({ doPayment }: any) => {
   const dropdown = [
     {
       value: "3d_view",
@@ -33,8 +33,9 @@ const ImagePreview = () => {
     // eslint-disable-next-line no-console
     console.log("Select value: ", value);
   }, []);
+
   return (
-    <div className="w-[400px] h-full  ">
+    <div className="w-[400px] h-full">
       <div className=" fixed">
         <p className="text-[#a0a4a7] ">{"<"} Back</p>
         <div className="flex flex-col justify-between rounded-md border-2 border-blue-600 w-[400px] h-[500px] mt-4">
@@ -81,7 +82,21 @@ const ImagePreview = () => {
             </a>
             <p className="text-white">4/5</p>
           </div>
-          <div>Button will be here</div>
+          <div className="flex justify-between mt-3">
+            <button
+              className="border border-white bg-black rounded-3xl w-48 py-2.5 font-bold hover:bg-[#0055ff] hover:border-[#0055ff] hover:cursor-pointer"
+              type="button"
+            >
+              <span className="text-white">Add To Cart</span>
+            </button>
+            <button
+              className="border border-[#0084ff] bg-[#0084ff] rounded-3xl w-48 py-2.5 font-bold hover:cursor-pointer"
+              type="button"
+              onClick={doPayment}
+            >
+              <span className="text-white">Buy Now</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
